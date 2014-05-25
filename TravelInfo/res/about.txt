@@ -8,5 +8,6 @@ table. Double-click on the offer you wish to see more about and a window will
 appear where you can view more information and where you can be linked to the 
 homepage to order the journey.
 
-You can search for which destination you wish to visit and a new window will 
-show you all of the current offers to that destination.
+You can search for which destination you wish to visit and the search table
+will be filtered according to what you write in the search bar. The search
+is case sensitive.
