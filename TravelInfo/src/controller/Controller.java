@@ -88,7 +88,6 @@ public class Controller {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			gui.setStatusLabel("Updating table...");
 			timer.cancel();
 			timer = new Timer();
 			timer.scheduleAtFixedRate(new TimerTask() {

@@ -54,7 +54,6 @@ public class OfferFrame extends JFrame {
 	 * @return the bottom panel as a JPanel
 	 */
 	private JPanel buildButtonPanel() {
-		System.out.println("Building bottom panel");
 		bookButton = new JButton("Book");
 		bookButton.addActionListener(new ActionListener() {
 
@@ -99,7 +98,6 @@ public class OfferFrame extends JFrame {
 	 * @return the top panel as a JPanel
 	 */
 	private JPanel buildTopPanel() {
-		System.out.println("Building top frame of new window...");
 		JPanel topPanel = new JPanel();
 		topPanel.setLayout(new GridLayout(6, 1));
 		JLabel destLabel = new JLabel("Destination:   "
@@ -131,7 +129,6 @@ public class OfferFrame extends JFrame {
 	 * @return the ImagePanel
 	 */
 	private JPanel buildPicturePanel() {
-		System.out.println("Building picture frame of new window");
 		URL url;
 		try {
 			url = new URL(offer.getPictureURL());
