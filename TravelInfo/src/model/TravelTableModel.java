@@ -65,9 +65,7 @@ public class TravelTableModel extends AbstractTableModel {
 	 *            the new offer array
 	 */
 	public void setOfferList(Offer[] offers) {
-		synchronized (this.offers) {
-			this.offers = offers;
-		}
+		this.offers = offers;
 		fireTableDataChanged();
 	}
 
