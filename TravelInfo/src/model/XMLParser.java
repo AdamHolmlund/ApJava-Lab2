@@ -12,7 +12,7 @@ import javax.xml.parsers.*;
 public class XMLParser extends Thread {
 
 	private String searchPath = "http://www.fritidsresor.se/Blandade-Sidor/feeds/tradera/";
-	public TravelTableModel tablemodel;
+	private TravelTableModel tablemodel;
 
 	/**
 	 * Constructs an XMLParser associated with the program's Controller
