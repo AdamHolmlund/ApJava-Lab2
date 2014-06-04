@@ -6,13 +6,12 @@ import java.util.ArrayList;
 
 import org.w3c.dom.*;
 
+import javax.swing.SwingUtilities;
 import javax.xml.parsers.*;
 
 public class XMLParser extends Thread {
 
-	private String searchPath = 
-			"http://www.fritidsresor.se/Blandade-Sidor/feeds/tradera/";
-	public Offer[] offerlist;
+	private String searchPath = "http://www.fritidsresor.se/Blandade-Sidor/feeds/tradera/";
 	public TravelTableModel tablemodel;
 
 	/**
@@ -80,18 +79,15 @@ public class XMLParser extends Thread {
 			Offer o = new Offer(lines2);
 			offlist.add(o);
 		}
-		Offer[] offerArray = new Offer[offlist.size()];
+		final Offer[] offerArray = new Offer[offlist.size()];
 		offlist.toArray(offerArray);
-		this.offerlist = offerArray;
-		tablemodel.setOfferList(offerlist);
-		System.out.println("XML parsed");
-	}
-
-	/**
-	 * @return an ArrayList of Offer objects
-	 */
-	public Offer[] getOfferList() {
-		return offerlist;
+		SwingUtilities.invokeLater(new Runnable() {
+			@Override
+			public void run() {
+				tablemodel.setOfferList(offerArray);
+				System.out.println("XML parsed");
+			}
+		});
 	}
 
 	@Override
